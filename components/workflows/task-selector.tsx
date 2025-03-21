@@ -1,7 +1,7 @@
 "use client";
 
 import { Database, FileText, Mail, RefreshCw, X } from "lucide-react";
-import { Card, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
 
 
@@ -43,6 +43,24 @@ export function TaskSelector({ onSelect, onCancel }: TaskSelectorProps) {
                 <CardTitle className="text-sm font-medium">Select Task Type</CardTitle>
                 <Button variant={"ghost"} size={"icon"} onClick={onCancel}><X className="w-4 h-4"/></Button>
             </CardHeader>
+            <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {tasks.map((task) => (
+                <Button
+                  key={task.type}
+                  variant="outline"
+                  className="flex items-center justify-start h-auto p-4"
+                  onClick={() => onSelect(task.type, task.title, task.description)}
+                >
+                  <div className="rounded-full bg-muted p-2 mr-4">{task.icon}</div>
+                  <div className="text-left">
+                    <div className="font-medium">{task.title}</div>
+                    <div className="text-xs text-muted-foreground">{task.description}</div>
+                  </div>
+                </Button>
+              ))}
+            </div>
+          </CardContent>
         </Card>
     )
 }

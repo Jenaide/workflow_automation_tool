@@ -24,7 +24,10 @@ export function LoginForm({className, ...props}: React.ComponentPropsWithoutRef<
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const onSubmit = async () => {};
+    const onSubmit = async () => {
+        setLoading(true);
+        setError(null);
+    };
 
     return (
         <div className={cn("flex flex-col gap-6", className)} {...props}>
@@ -73,6 +76,7 @@ export function LoginForm({className, ...props}: React.ComponentPropsWithoutRef<
                                     )}
                                 />
                             </div>
+                            {error}
                             <Button type="submit" className="w-full cursor-pointer" disabled={loading}>
                                 {loading ? "Logging in.." : "Continue"}
                             </Button>
