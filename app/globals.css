@@ -4,6 +4,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+body {
+  color: rgb(var(--foreground-rgb));
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
