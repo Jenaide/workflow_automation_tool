@@ -1,0 +1,42 @@
+name: Dependency Updates
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # Run weekly on Mondays
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  dependency-updates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Check for outdated dependencies
+        run: npm outdated
+
+      - name: Update dependencies
+        run: |
+          npm update
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add package.json package-lock.json
+          git diff --staged --quiet || git commit -m "chore: update dependencies"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: 'chore: update dependencies'
+          body: |
+            This PR updates project dependencies to their latest versions.
+            
+            This is an automated PR created by the dependency-updates workflow.
+          branch: dependency-updates
+          base: main
