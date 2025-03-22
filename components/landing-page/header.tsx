@@ -83,6 +83,7 @@ export function Header() {
                         </div>
                         <div className="flex md:hidden">
                             <Button
+                                variant={"outline"}
                                 type="button"
                                 className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
