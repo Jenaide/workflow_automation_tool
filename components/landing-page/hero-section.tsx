@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import Flow from "@/public/flowscreenshot.png";
 
 export function Hero() {
     const [isLoaded, setIsLoaded] = useState(false)
@@ -56,18 +58,18 @@ export function Hero() {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="mt-8 flex flex-wrap gap-4"
                         >
-                            <a
+                            <Link
                                 href="#"
                                 className="rounded-md bg-indigo-600 px-5 py-3 text-base font-medium text-white shadow-md transition-all hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                             >
                                 Get started
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="#"
                                 className="rounded-md border border-gray-300 bg-white px-5 py-3 text-base font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                             >
                                 Learn more
-                            </a>
+                            </Link>
                         </motion.div>
                     </div>
                     <motion.div
@@ -82,7 +84,7 @@ export function Hero() {
                             </div>
                             <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg">
                             <Image
-                                src="/placeholder.svg?height=600&width=800"
+                                src={Flow}
                                 alt="Product dashboard"
                                 width={800}
                                 height={600}
