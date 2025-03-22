@@ -59,13 +59,13 @@ export function Hero() {
                             className="mt-8 flex flex-wrap gap-4"
                         >
                             <Link
-                                href="#"
+                                href="/signup"
                                 className="rounded-md bg-indigo-600 px-5 py-3 text-base font-medium text-white shadow-md transition-all hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                             >
                                 Get started
                             </Link>
                             <Link
-                                href="#"
+                                href="/about"
                                 className="rounded-md border border-gray-300 bg-white px-5 py-3 text-base font-medium text-gray-700 shadow-sm transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                             >
                                 Learn more

@@ -3,6 +3,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import Sarah from '@/public/successful-businesswoman.jpg';
+import Mike from '@/public/young-man-wearing.jpg';
+import Emily from '@/public/portrait-woman-against-black.jpg'
 
 const testimonials = [
     {
@@ -10,21 +13,21 @@ const testimonials = [
         "This platform has completely transformed how our team works. We've seen a 40% increase in productivity since implementing it.",
       author: "Sarah Johnson",
       role: "Product Manager at TechCorp",
-      image: "/placeholder.svg?height=100&width=100",
+      image: Sarah,
     },
     {
       content:
         "The intuitive interface and powerful features make this the best solution we've used. It's been a game-changer for our business.",
       author: "Michael Chen",
       role: "CTO at StartupX",
-      image: "/placeholder.svg?height=100&width=100",
+      image: Mike,
     },
     {
       content:
         "I was skeptical at first, but after seeing the results, I'm convinced. Our team is more aligned and efficient than ever before.",
       author: "Emily Rodriguez",
       role: "Operations Director at GrowthCo",
-      image: "/placeholder.svg?height=100&width=100",
+      image: Emily,
     },
 ]
 export function Testimonials() {

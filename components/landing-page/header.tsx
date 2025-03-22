@@ -73,7 +73,7 @@ export function Header() {
                                         transition={{ duration: 0.5, delay: 0.4 }}
                                     >
                                         <Link
-                                            href="#"
+                                            href="/signup"
                                             className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
                                             >
                                             Get Started

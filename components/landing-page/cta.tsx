@@ -33,7 +33,7 @@ export function CallToAction() {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                                 transition={{ duration: 0.5, delay: 0.3 }}
-                                href="#"
+                                href="/signup"
                                 className="mt-8 inline-flex items-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 shadow hover:bg-indigo-50"
                             >
                                 Get started for free
