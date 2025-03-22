@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import CookieSettingsButton from "../cookie/cookie-settings-button"
 
 export default function Footer() {
   return (
@@ -70,27 +71,43 @@ export default function Footer() {
           >
             <h3 className="text-lg font-bold mb-4">Legal</h3>
             <ul className="space-y-2">
-              {["Privacy", "Terms", "Security", "Cookies"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors duration-300">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/security" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Security Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/cookies" className="text-gray-400 hover:text-white transition-colors duration-300">
+                  Cookie Policy
+                </Link>
+              </li>
             </ul>
           </motion.div>
         </div>
 
         <div className="mt-12 border-t border-gray-800 pt-8">
-          <motion.p
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
             className="text-center text-gray-400"
           >
-            Copyright &copy; {new Date().getFullYear()} FlowPilot&reg;. All rights reserved.
-          </motion.p>
+            <p className="text-gray-400">Copyright &copy; {new Date().getFullYear()} FlowPilot&reg;. All rights reserved.</p>
+            <div className="mt-4 md:mt-0">
+              <CookieSettingsButton />
+            </div>
+          </motion.div>
         </div>
       </div>
     </footer>

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { CookieConsentProvider } from "@/components/context/cookie-concent";
+import CookieConsentBanner from "@/components/cookie/cookie-concent-banner";
+import CookiePreferencesModal from "@/components/cookie/cookie-preference-modal";
 
 
 const font = DM_Sans({ subsets: ["latin"] });
@@ -27,7 +30,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <CookieConsentProvider>
+            {children}
+            <CookieConsentBanner />
+            <CookiePreferencesModal />
+          </CookieConsentProvider>
         </ThemeProvider>
       </body>
     </html>
